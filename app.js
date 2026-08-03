@@ -1,8 +1,16 @@
-const http = require('http')
-http.createServer(function(req,res){
-	res.write('We sgo2 we go we go');
-	res.end();
-}).listen(3000);
+const express = require('express')
+const server = require('http').createServer()
+const app = express()
+const port = process.env.PORT || 3000
 
+app.get('/', (req, res) => {
 
-console.log('Server stareted on port:3000');
+  res.sendFile('index.html',{root:__dirname})
+
+})
+
+server.on('request', app)
+
+server.listen(port, () => {
+  console.log(`Listening on port ${port}`)
+})
