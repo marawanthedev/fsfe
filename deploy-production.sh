@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
-
 APP_DIR="/var/www/fsfe"
 BRANCH="master"
 
