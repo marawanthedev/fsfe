@@ -12,7 +12,6 @@ git fetch origin "$BRANCH"
 git reset --hard "origin/$BRANCH"
 
 npm ci
-npm run build
 
 pm2 restart fsfe --update-env
 
