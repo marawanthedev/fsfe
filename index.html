@@ -1,1 +1,32 @@
-bye from mac
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HOLA</title>
+</head>
+
+<body>
+  Hello from the other side
+  <script>
+    let ws;
+    const proto= window.location.protocol === 'https:' ? 'wss://' : 'ws://';
+    ws= new WebSocket(`${proto}//${window.location.host}`);
+
+    ws.onmessage= function(event){
+      console.log(event.data)
+    }
+    ws.onopen= function(event){
+      console.log('Connected to server')
+    }
+    ws.onclose= function(event){
+      console.log('Disconnected from server')
+    }
+    ws.onerror= function(event){
+      console.log('Error:', event)
+    }
+  </script>
+</body>
+
+</html>
