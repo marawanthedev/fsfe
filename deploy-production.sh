@@ -13,6 +13,6 @@ git reset --hard "origin/$BRANCH"
 
 npm ci
 
-pm2 restart fsfe --update-env
+pm2 restart fsfe-production --update-env
 
 echo "Production deployment completed."
